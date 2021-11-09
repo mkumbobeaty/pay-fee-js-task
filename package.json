@@ -4,6 +4,7 @@
   "description": "Node js app for calculating payment fee and commission",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "jest"
   },
   "repository": {
