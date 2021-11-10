@@ -1,25 +1,12 @@
 const fs = require('fs');
 
-//read data from Json file with error handling;
+// read data from json with error handling
+const jsonData = (path) => {
+  try {
+    return JSON.parse(fs.readFileSync(path));
+  } catch (err) {
+    console.log(err.message);
+  }
+};
 
-const jsonInputData = (path) => {
-    //read data asynchronously;
-    const jsonData = fs.readFile(path, 'utf8', (err, data) => {
-        if (err) {
-            console.log('Error reading this file');
-        }
-        try {
-
-            const objectData = JSON.parse(data)
-            console.log(objectData)
-            return objectData
-        }
-        catch (err) {
-            console.log(err.message)
-        }
-    })
-
-    return jsonData;
-}
-
-module.exports = jsonInputData;
+module.exports = jsonData;
