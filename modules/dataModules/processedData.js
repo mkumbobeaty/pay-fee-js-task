@@ -1,9 +1,11 @@
 
+const getCommisionFees = require('../calculationModules/getFees');
 const fetchData = require('./fetchData');
 
 const configUrl = 'https://private-anon-24b1a4759b-paysera.apiary-mock.com';
 const processedData = async (data) => {
 
+    return await (async () => {
         const result = [];
         for (let i = 0; i < data.length; i++) {
             const payments = data[i];
@@ -17,12 +19,14 @@ const processedData = async (data) => {
 
             // calculating fee from fetched APIs data
             const feeConfig = await fetchData(apiUrls[type]);
-            console.log("configured data", feeConfig)
+            const resultData = getCommisionFees(payments, feeConfig);
 
-            // result.push()
+            console.log(resultData);
+            result.push(resultData)
         }
 
         return result;
+    })();
 
 }
 
