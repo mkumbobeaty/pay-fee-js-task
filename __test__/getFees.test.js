@@ -78,4 +78,5 @@ describe('Get commission fee', () => {
     expect(getCommisionFees(transaction8, cashOutNaturalFeeConf)).toBe('0.00');
     expect(getCommisionFees(transaction9, cashOutNaturalFeeConf)).toBe('29272523.09');
   });
+
 });

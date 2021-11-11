@@ -10,12 +10,13 @@ describe('Fetch data module', () => {
                 data: { percents: 0.3, week_limit: { amount: 1000, currency: 'EUR' } }
             })
         );
-
         const data = await fetchData('cash-in');
 
         // expect
         expect(data).toEqual({ percents: 0.3, week_limit: { amount: 1000, currency: 'EUR' } });
         expect(mockAxios.get).toHaveBeenCalledTimes(1);
+        expect(data).toBeDefined()
+
     });
 
 })
