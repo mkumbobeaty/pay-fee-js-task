@@ -14,6 +14,9 @@ describe('ProcessedData', () => {
 
     test('should check cash out with week limit', async () => {
         const cash_out = await processedData(inputData)
-        expect(cash_out).toStrictEqual(["0.06", "0.90", "90.00"])
-    })
+        expect(cash_out).toEqual(
+            expect.arrayContaining(["0.60", "0.00", "90.00"])
+        )
+    });
+
 })
