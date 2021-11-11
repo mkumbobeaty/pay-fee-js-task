@@ -3,6 +3,7 @@ const getCommisionFees = require('../calculationModules/getFees');
 const fetchData = require('./fetchData');
 
 const configUrl = 'https://private-anon-24b1a4759b-paysera.apiary-mock.com';
+
 const processedData = async (data) => {
 
     return await (async () => {

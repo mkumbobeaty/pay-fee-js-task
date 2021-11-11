@@ -4,9 +4,7 @@ const weeklyCalculation = require("./weeklyCalculation");
 
 const getCommisionFees = (transaction, feeConfig) => {
     //calculate default commission
-
     let fee = transaction.operation.amount * feeConfig.percents * 0.01;
-
 
     // check if WEEK_LIMIT exists for this operation
     if (feeConfig.week_limit) {
@@ -21,7 +19,6 @@ const getCommisionFees = (transaction, feeConfig) => {
     //check if min limit exists for the operation
     if (feeConfig.min) {
         fee = (fee > feeConfig.min.amount) ? fee : feeConfig.min.amount
-
     }
 
     //round number to upper bound

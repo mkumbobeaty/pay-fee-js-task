@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+//function for fetching data from API
 const fetchData = async (url) => {
 
     try{

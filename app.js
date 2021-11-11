@@ -3,6 +3,7 @@ const processedData = require('./modules/dataModules/processedData');
 
 let fileName = process.argv.slice(2)[0];
 
+//module to set file name for reading json data and process them
 if(!fileName){
     fileName = 'input.json';
 }
