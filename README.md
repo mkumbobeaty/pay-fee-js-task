@@ -1,4 +1,4 @@
-# Pay-fees
+# pay-fees-js-task
 
 ## Project setup
 ```
